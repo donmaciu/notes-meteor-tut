@@ -19,7 +19,6 @@ export const NoteList = (props)=>{
                 );
             })}
             </div>
-             NoteList {props.notes.length}
         </div>
     );
 };
