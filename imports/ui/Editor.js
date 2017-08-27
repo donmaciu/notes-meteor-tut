@@ -29,7 +29,7 @@ export class Editor extends React.Component{
             const noteId = this.props.note ? this.props.note._id : udefined;
 
             if(noteId){
-                Meteor.call('notes.remove' , noteId);
+                this.props.call('notes.remove' , noteId);
                 this.props.browserHistory.push('/dashboard');
             }
         }
