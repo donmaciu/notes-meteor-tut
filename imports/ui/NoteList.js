@@ -9,7 +9,7 @@ import NoteListEmptyItem from './NoteListEmptyItem';
 
 export const NoteList = (props)=>{
     return (
-        <div>
+        <div className="item-list">
             <NoteListHeader/>
             <div>
             {props.notes.length === 0 ? <NoteListEmptyItem/> : undefined}
