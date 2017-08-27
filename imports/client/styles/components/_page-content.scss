@@ -12,13 +12,25 @@
 
 .page-content__sidebar {
     //display: flex;
-    display: none;
-    width: $page-content-sidebar-width;
-    padding-right: $large-space;
+    display: flex;
+    width: 100vw;
+
+    position: fixed;
+    top: $header-height;
+    left: -100vw;
+    bottom: 0;
+
+    transition: left .3s ease;
 
     @include desktop{
-        display: flex;
+        position: static;
+        padding-right: $large-space;
+        width: $page-content-sidebar-width;
     }
+}
+
+.is-nav-open .page-content__sidebar {
+    left: 0;
 }
 
 

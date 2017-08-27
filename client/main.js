@@ -18,10 +18,17 @@ Tracker.autorun(()=>{
   const selectedNoteId = Session.get('selectedNoteId');
   if(selectedNoteId){
     browserHistory.replace(`/dashboard/${selectedNoteId}`);
+    Session.set('isNavOpen' , false);
   }
 });
 
+Tracker.autorun(()=>{
+  const isNavOpen = Session.get('isNavOpen');
+  document.body.classList.toggle('is-nav-open' , isNavOpen);
+})
+
 Meteor.startup(()=>{
+  Session.set('isNavOpen' , false);
   Session.set('selectedNoteId', undefined);
   ReactDOM.render(routes, document.getElementById('app'));
 });
